@@ -1,0 +1,66 @@
+@import "variables";
+@import "mixins";
+
+// Globales
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $font-family;
+  width: 100vw;
+  height: 100%;
+  margin: 0;
+  user-select: none;
+  background-color: black;
+  color: #fff;
+  h1 {
+    font-size: 3.6rem;
+    @include respond-to(medium) {
+      font-size: 3rem;
+    }
+  }
+
+  h2 {
+    font-size: 3rem;
+    @include respond-to(medium) {
+      font-size: 2.6rem;
+    }
+  }
+
+  h3 {
+    font-size: 2.4rem;
+    @include respond-to(medium) {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    font-size: 1.6rem;
+    @include respond-to(medium) {
+      font-size: 1.4rem;
+    }
+  }
+
+  ion-icon {
+    font-size: 3.6rem;
+    color: $icon-color;
+    --ionicon-stroke-width: 4.2rem;
+    @include respond-to(medium) {
+      font-size: 6rem;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
