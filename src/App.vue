@@ -1,13 +1,13 @@
 <template>
-  <h1> Hola </h1>
-  <NavView />
+  <LayoutApp />
 </template>
 <script>
 import NavView from '@/views/NavView.vue'
+import LayoutApp from "@/views/LayoutApp.vue";
 export default {
   name: 'App',
   components: {
-    NavView,
+    LayoutApp,
   }
 }
 </script>
