@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar">
+  <nav v-if="isLoggedIn" class="navbar">
     <NavButton
         v-for="(item, index) in menuItems"
         :key="index"
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import {ref, computed, onMounted} from 'vue';
 import {useRoute} from 'vue-router';
 import NavButton from '@/components/NavButton.vue';
 
@@ -23,21 +24,38 @@ export default {
   setup() {
     const route = useRoute();
 
-    const menuItems = [
-      {icon: "search-circle-outline", text: "Analisis", link: "/analisis"},
-      {icon: "home-outline", text: "Inicio", link: "/"},
-      {icon: "clipboard-outline", text: "Expediente", link: "/expediente"},
-    ];
+    const menuItems = ref([
+      {icon: 'search-circle-outline', text: 'Analisis', link: '/analisis'},
+      {icon: 'home-outline', text: 'Inicio', link: '/'},
+      {icon: 'clipboard-outline', text: 'Expediente', link: '/expediente'},
+    ]);
 
     const isActive = (link) => route.path === link;
 
-    const getIcon = (icon, link) => isActive(link) ? icon.replace('-outline', '') : icon;
+    const getIcon = (icon, link) => (isActive(link) ? icon.replace('-outline', '') : icon);
+
+    const isLoggedIn = ref(!!localStorage.getItem('token'));
+
+    const login = () => {
+      localStorage.setItem('token', 'dummy-token');
+      isLoggedIn.value = true;
+      console.log('Usuario ha iniciado sesión');
+    };
+    onMounted(() => {
+      if (isLoggedIn.value) {
+        console.log('Usuario activo');
+      } else {
+        console.log('No hay ningún usuario activo');
+      }
+    });
 
     return {
       menuItems,
       isActive,
       getIcon,
+      isLoggedIn,
+      login,
     };
   },
-}
+};
 </script>
