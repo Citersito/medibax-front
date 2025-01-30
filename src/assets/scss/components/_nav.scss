@@ -1,0 +1,24 @@
+@import "../variables";
+
+.navbar{
+  //background-color: #2B2B2B;
+  border-radius: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 1rem;
+  color: #B3B3B3;
+  font-weight: 300;
+  .navbar-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem; // Añade padding para darle espacio al contenido
+  }
+}
