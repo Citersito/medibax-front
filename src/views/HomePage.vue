@@ -1,28 +1,32 @@
 <template>
   <div class="home-page">
-    <h1>Home</h1>
-    <button @click="logout">Cerrar Sesión</button>
+    <div class="profile">
+      <NavButton link="/profile" text="¡Hola {{ user }}!" icon="person"/>
+    </div>
   </div>
 </template>
 
 <script>
-import {useRouter} from 'vue-router';
+import {ref, onMounted} from 'vue';
+import NavButton from '@/components/NavButton.vue';
 
 export default {
+  components: {
+    NavButton,
+  },
   setup() {
-    const router = useRouter();
+    const user = ref('');
 
-    const logout = () => {
-      // Eliminar el token y los datos del usuario de localStorage
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      // Redirigir a la página de inicio de sesión
-      window.location.reload();
-      router.push({name: 'Login'});
-    };
+    onMounted(() => {
+      const storedUser = localStorage.getItem('user');
+      if (storedUser) {
+        user.value = storedUser;
+      }
+      console.log('User:', user.value); // Agregar console.log para verificar el valor de user
+    });
 
     return {
-      logout,
+      user,
     };
   },
 };

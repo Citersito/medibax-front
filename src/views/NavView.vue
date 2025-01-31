@@ -26,7 +26,7 @@ export default {
 
     const menuItems = ref([
       {icon: 'search-circle-outline', text: 'Analisis', link: '/analisis'},
-      {icon: 'home-outline', text: 'Inicio', link: '/'},
+      {icon: 'home-outline', text: 'Inicio', link: '/home'},
       {icon: 'clipboard-outline', text: 'Expediente', link: '/expediente'},
     ]);
 
