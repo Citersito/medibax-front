@@ -1,7 +1,7 @@
 <template>
   <router-link :to="link" class="nav-button">
     <div class="navbar-item">
-      <ion-icon v-if="icon" :name="icon"></ion-icon>
+      <ion-icon v-if="icon" :name="icon" style="font-size: 25px;" class="ii"></ion-icon>
       <p>{{ text }}</p></div>
   </router-link>
 

@@ -1,6 +1,7 @@
 @import "../variables";
 
 .navbar{
+  background-color: #161616;
   text-align: center;
   display: flex;
   justify-content: space-between;
@@ -24,6 +25,7 @@
 
 @include respond-to(large){
     .navbar{
+      width: 17%;
         flex-direction: column;
         top: 0;
         align-items: start;

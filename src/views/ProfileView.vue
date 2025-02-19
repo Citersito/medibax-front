@@ -1,6 +1,6 @@
 <template>
   <h1>Profile</h1>
-  <button @click="logout">Cerrar Sesión</button>
+  <button @click="logout" class="LO">Cerrar Sesión</button>
 </template>
 
 <script>
