@@ -1,0 +1,70 @@
+@import "../variables";
+.login-signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login-signup-form {
+  background: white;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-signup-form h1 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #333;
+}
+
+.login-signup-form input {
+  font-family: $font-family;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: border-color 0.3s;
+}
+
+.login-signup-form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.login-signup-form button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #a5ceff;
+  border: 1px solid #000;
+  border-radius: 10px;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-signup-form button:hover {
+  border-bottom: 5px solid #000;
+}
+
+.login-signup-form a {
+  margin-top: 1rem;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.login-signup-form a:hover {
+  color: #0056b3;
+}
