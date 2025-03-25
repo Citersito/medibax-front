@@ -1,0 +1,62 @@
+@media (max-width: 767px){
+    .E{
+        margin-top: 3rem;
+    }
+    
+    .EG{
+        background-color: #363636;
+        height: 15rem;
+        padding: 10px;
+        margin-top: 3rem;
+        border-radius: 1.5rem;
+    }
+    
+    .CV{
+        background-color: #363636;
+        height: 15rem;
+        padding: 10px;
+        margin-top: 3rem;
+        border-radius: 1.5rem;
+    }
+    
+    .Expediente{
+        display: flex;
+        background-color: #363636;
+        margin: auto;
+        width: 90vw;
+        border-radius: 4rem;
+        margin-top: 2rem;
+        flex-direction: row;
+        align-items: center;
+      }
+      .navbar-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+    
+      .ME{
+        font-size: 4rem;
+        padding-left: 9rem;
+      }
+      
+      .ii {
+        font-size: 4rem;
+        margin: 3px;
+        padding: 2rem;
+        background-color: #171717;
+        border-radius: 60%;
+        margin-right: 1rem;
+        margin-left: 1rem;
+      }
+      
+}
+  @include respond-to(large) {
+    .Expediente {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: auto;
+      padding-right: 5px;
+    }
+  }
