@@ -6,6 +6,7 @@ import ExpedienteView from '../views/ExpedienteView.vue'
 import LoginView from '../views/LoginView.vue'
 import SignupView from '../views/SignupView.vue'
 import ProfileView from "@/views/ProfileView.vue";
+import PredictionView from "@/views/PredictionView.vue";
 
 const routes = [
   {
@@ -28,6 +29,12 @@ const routes = [
         path: 'profile',
         name: 'profile',
         component: ProfileView,
+        meta: { requiresAuth: true }
+      },
+      {
+        path: 'prediction',
+        name: 'prediction',
+        component: PredictionView,
         meta: { requiresAuth: true }
       }
     ]

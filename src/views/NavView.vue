@@ -24,7 +24,7 @@ export default {
   setup() {
     const route = useRoute();
     const menuItems = ref([
-      { icon: 'search-circle-outline', text: 'Analisis', link: '/analisis' },
+      { icon: 'search-circle-outline', text: 'Analisis', link: '/prediction' },
       { icon: 'home-outline', text: 'Inicio', link: '/' },
       { icon: 'clipboard-outline', text: 'Expediente', link: '/expediente' },
       { icon: 'clipboard-outline', text: 'Profile', link: '/profile' },
