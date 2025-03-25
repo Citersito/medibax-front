@@ -24,7 +24,7 @@ export default {
   methods: {
     async signup() {
       try {
-        const response = await axios.post('/auth/signup', {
+        const response = await axios.post('auth/signup', {
           email: this.email,
           password: this.password
         })

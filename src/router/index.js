@@ -1,31 +1,52 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import MainLayout from '../layouts/MainLayout.vue'
+import AuthLayout from '../layouts/AuthLayout.vue'
 import HomeView from '../views/HomeView.vue'
+import ExpedienteView from '../views/ExpedienteView.vue'
 import LoginView from '../views/LoginView.vue'
 import SignupView from '../views/SignupView.vue'
-import AboutView from '../views/AboutView.vue'
+import ProfileView from "@/views/ProfileView.vue";
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView,
-    meta: { requiresAuth: true }
+    component: MainLayout,
+    children: [
+      {
+        path: '',
+        name: 'home',
+        component: HomeView,
+        meta: { requiresAuth: true }
+      },
+      {
+        path: 'expediente',
+        name: 'Expediente',
+        component: ExpedienteView,
+        meta: { requiresAuth: true }
+      },
+      {
+        path: 'profile',
+        name: 'profile',
+        component: ProfileView,
+        meta: { requiresAuth: true }
+      }
+    ]
   },
   {
-    path: '/login',
-    name: 'login',
-    component: LoginView
-  },
-  {
-    path: '/signup',
-    name: 'signup',
-    component: SignupView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    component: AboutView,
-    meta: { requiresAuth: true }
+    path: '/',
+    component: AuthLayout,
+    children: [
+      {
+        path: 'login',
+        name: 'login',
+        component: LoginView
+      },
+      {
+        path: 'signup',
+        name: 'signup',
+        component: SignupView
+      }
+    ]
   }
 ]
 
