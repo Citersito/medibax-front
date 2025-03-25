@@ -2,9 +2,9 @@
   <div class="edit-paciente-container">
     <form class="edit-paciente-form" @submit.prevent="updatePaciente">
       <h1>Editar Paciente</h1>
-      <input v-model="paciente.nombre" type="text" placeholder="Nombre" required>
+      <input v-model="paciente.nombre" type="text" placeholder="Nombre" >
       <input v-model="paciente.nombre_segundo" type="text" placeholder="Segundo Nombre">
-      <input v-model="paciente.apellido_paterno" type="text" placeholder="Apellido Paterno" required>
+      <input v-model="paciente.apellido_paterno" type="text" placeholder="Apellido Paterno" >
       <input v-model="paciente.apellido_materno" type="text" placeholder="Apellido Materno">
       <input v-model="paciente.curp" type="text" placeholder="CURP">
       <input v-model="paciente.telefono" type="text" placeholder="Teléfono">
@@ -46,7 +46,9 @@ export default {
       if (id) {
         try {
           const response = await axios.get(`/expediente/paciente/${id}`)
-          paciente.value = response.data
+          if (response.data) {
+            paciente.value = { ...paciente.value, ...response.data }
+          }
         } catch (err) {
           console.error(err)
           error.value = 'Error al cargar los datos del paciente'
@@ -81,3 +83,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.error {
+  color: red;
+  margin-top: 10px;
+}
+</style>
