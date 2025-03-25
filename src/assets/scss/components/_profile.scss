@@ -1,41 +1,73 @@
-.profile {
-  display: flex;
-  background-color: #363636;
-  margin: auto;
-  width: 90vw;
-  border-radius: 4rem;
-  margin-top: 2rem;
-  flex-direction: row;
-  align-items: center;
+.edit-paciente-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #121212;
 }
 
-.navbar-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+.edit-paciente-form {
+	background: #1f1f1f;
+	padding: 2rem;
+	border-radius: 12px;
+	box-shadow: 0 6px 10px rgba(0, 0, 0, 0.8);
+	width: 100%;
+	max-width: 450px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	h1 {
+		font-size: 2rem;
+		margin-bottom: 1.5rem;
+		color: #ffffff;
+		text-align: center;
+	}
+
+	input,
+	select {
+		width: 100%;
+		padding: 1rem;
+		margin-bottom: 1rem;
+		border: 2px solid #333333;
+		border-radius: 10px;
+		box-sizing: border-box;
+		font-size: 1.2rem;
+		color: #ffffff;
+		background-color: #2b2b2b;
+		transition: border-color 0.3s ease;
+
+		&:focus {
+			border-color: #3498db;
+			outline: none;
+		}
+
+		&::placeholder {
+			color: #aaaaaa;
+		}
+	}
+
+	button {
+		width: 100%;
+		padding: 1rem;
+		background: #3498db;
+		color: #ffffff;
+		border: none;
+		border-radius: 10px;
+		font-size: 1.2rem;
+		cursor: pointer;
+		transition: background 0.3s ease;
+
+		&:hover {
+			background: #2980b9;
+		}
+	}
 }
 
-.profile ion-icon {
-  font-size: 4rem;
-  margin: 3px;
-  padding: 2rem;
-  background-color: #171717;
-  border-radius: 60%;
-  margin-right: 1rem;
-  margin-left: 1rem;
-}
-
-@include respond-to(large) {
-  .profile {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: auto;
-    padding-right: 5px;
-  }
-}
-
-.LO{
-  background-color: $cont-color;
-  
+.error {
+	margin-top: 1rem;
+	color: #e74c3c;
+	text-align: center;
 }
