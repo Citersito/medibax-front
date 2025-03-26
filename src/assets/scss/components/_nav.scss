@@ -24,6 +24,9 @@
 		align-items: center;
 		justify-content: center;
 		padding: 1rem;
+		&:hover {
+			color: #c1ffff;
+		}
 	}
 }
 
@@ -51,4 +54,9 @@
 	// .item-3 {
 	//   order: 3;
 	// }
+}
+
+.router-link-exact-active {
+	color: #c1ffff;
+	font-weight: 600;
 }

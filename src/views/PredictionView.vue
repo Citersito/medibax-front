@@ -378,12 +378,11 @@ button[type="submit"]:hover {
 
 button[type="submit"] {
 	padding: 10px 15px;
-	background-color: #28a745;
 	color: white;
 	border: none;
 	cursor: pointer;
 }
 button[type="submit"]:hover {
-	background-color: #218838;
+	background-color: #372188;
 }
 </style>
